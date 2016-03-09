@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>List With ng-repeat</title>
+    <link rel="stylesheet" href="material.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body ng-controller="MainController" layout="column">
+    <md-toolbar layout="row" layout-align= "center center">
+      <div>
+        <h2>
+          <strong><span>md-card With ng-repeat!</span></strong>
+        </h2>
+      </div>
+    </md-toolbar>
+    <md-content layout-padding layout-wrap>
+      <div layout="column">
+        <p>
+          Search: <input type="text" ng-model="test">
+        </p>
+        <div layout="column" layout-align="center center">
+          <h1>List of Names</h1>
+          <div layout="row" layout-xs="column">
+            <div flex>
+
+              <md-button ng-click="dialog()"ng-repeat="people in contacts | filter:test | orderBy:'name'">
+              <md-card>
+                <md-card-title>
+                  <md-card-title-text>
+                    <span class="md-headline">{{people.name}}</span>
+                    <span class="md-subhead">Phone: {{people.phone}}</span>
+                    <span class="md-subhead">Country: {{people.country}}</span>
+                  </md-card-title-text>
+                  <md-card-title-media>
+                    <div class="md-media-sm card-media"></div>
+                  </md-card-title-media>
+                </md-card-title>
+              </md-card>
+              </md-button>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </md-content>
+
+
+
+
+
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <script src="script.js" charset="utf-8"></script>
+  </body>
+</html>
